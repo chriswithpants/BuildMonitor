@@ -14,7 +14,7 @@ namespace BuildMonitor
         {
             var baseUri = DefaultSettingsReader.Get<BaseUri>();
 
-            _service = WebApp.Start<Startup>(baseUri.ToString());
+            _service = WebApp.Start<Startup>(baseUri);
 
             return true;
         }

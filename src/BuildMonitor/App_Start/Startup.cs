@@ -26,7 +26,7 @@ namespace BuildMonitor
         {
             ConfigureLogging();
 
-            Log.Debug("Starting Sample...");
+            Log.Debug("Starting BuildMonitor...");
 
             HookUpToUnhandledExceptionsInTheAppDomain();
             HookUpToUnobservedTaskExceptions();
@@ -52,12 +52,12 @@ namespace BuildMonitor
 
             app.HookDisposal(TearDown);
 
-            Log.Debug("Sample started...");
+            Log.Debug("BuildMonitor started...");
         }
 
         private void TearDown()
         {
-            Log.Debug("Stoping Sample...");
+            Log.Debug("Stoping BuildMonitor...");
 
             if (_container == null) return;
 
@@ -71,7 +71,7 @@ namespace BuildMonitor
                 Log.Error(e, "Failed to dispose the Autofac Container: {Message}", e.Message);
             }
 
-            Log.Debug("Sample stopped...");
+            Log.Debug("BuildMonitor stopped...");
 
             _container = null;
         }

@@ -3,7 +3,7 @@ using ConfigInjector;
 
 namespace BuildMonitor.ConfigurationSettings
 {
-    public class BaseUri : ConfigurationSetting<Uri>
+    public class BaseUri : ConfigurationSetting<string>
     {
     }
 }
