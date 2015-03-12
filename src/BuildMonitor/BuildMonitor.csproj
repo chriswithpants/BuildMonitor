@@ -149,8 +149,8 @@
     <Compile Include="ConfigurationSettings\SeqServerUri.cs" />
     <Compile Include="Api\Monitor\MonitorBroadcaster.cs" />
     <Compile Include="Api\Monitor\MonitorHub.cs" />
-    <Compile Include="ConfigurationSettings\ServiceDescription.cs" />
-    <Compile Include="ConfigurationSettings\ServiceName.cs" />
+    <Compile Include="ConfigurationSettings\WindowsServiceDescription.cs" />
+    <Compile Include="ConfigurationSettings\WindowsServiceName.cs" />
     <Compile Include="Infrastructure\Authentication\AuthenticatedUser.cs" />
     <Compile Include="Infrastructure\CustomJsonSerializer.cs" />
     <Compile Include="Infrastructure\Clock\IClock.cs" />

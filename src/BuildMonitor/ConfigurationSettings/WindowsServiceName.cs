@@ -2,7 +2,7 @@
 
 namespace BuildMonitor.ConfigurationSettings
 {
-    public class ServiceName : ConfigurationSetting<string>
+    public class WindowsServiceName : ConfigurationSetting<string>
     {    
     }
 }

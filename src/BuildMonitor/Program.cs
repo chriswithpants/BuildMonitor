@@ -14,8 +14,8 @@ namespace BuildMonitor
         {
             var logger = ConfigureLogging();
 
-            var serviceName = DefaultSettingsReader.Get<ServiceName>();
-            var serviceDescription = DefaultSettingsReader.Get<ServiceDescription>();
+            var serviceName = DefaultSettingsReader.Get<WindowsServiceName>();
+            var serviceDescription = DefaultSettingsReader.Get<WindowsServiceDescription>();
 
             HostFactory.Run(x =>                                 
             {
