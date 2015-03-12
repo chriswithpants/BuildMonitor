@@ -1,7 +1,7 @@
-ChatterBox
+Build Monitor
 ==========
 
-Nimbus Chat Service
+Build Monitor for TeamCity
 
 ##<a id="continuous-integration-from-teamcity">Continuous Integration from TeamCity</a>
 ChatterBox project is built & tested continuously by TeamCity (more details [here](http://www.mehdi-khalili.com/continuous-integration-delivery-github-teamcity)). That applies to pull requests too. Shortly after you submit a PR you can check the build and test status notification on your PR. I would appreciate if you could send me green PRs.
