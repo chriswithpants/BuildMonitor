@@ -13,8 +13,10 @@
     <tags>TeamCity Build Monitor</tags>
   </metadata>
   <files>
+    <file src="app\**\*.*" target="app" />
     <file src="scripts\*.*" target="scripts" />
     <file src="content\*.*" target="content" />
     <file src="fonts\*.*" target="fonts" />
+    <file src="index.html" target="." />
   </files>
 </package>
