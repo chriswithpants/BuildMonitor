@@ -12,4 +12,9 @@
     <copyright>Copyright 2015</copyright>
     <tags>TeamCity Build Monitor</tags>
   </metadata>
+  <files>
+    <file src="scripts\*.*" target="scripts" />
+    <file src="content\*.*" target="content" />
+    <file src="fonts\*.*" target="fonts" />
+  </files>
 </package>
