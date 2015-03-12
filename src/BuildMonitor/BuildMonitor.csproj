@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4E2FB37-B833-427D-8503-96B45640D6D3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildMonitor</RootNamespace>
+    <AssemblyName>BuildMonitor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.SignalR">
+      <HintPath>..\..\packages\Autofac.SignalR.3.0.1\lib\net40\Autofac.Integration.SignalR.dll</HintPath>
+    </Reference>
+    <Reference Include="ConfigInjector">
+      <HintPath>..\..\packages\ConfigInjector.1.1.0.175\lib\net45\ConfigInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Diagnostics, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Owin.Diagnostics.3.0.1\lib\net45\Microsoft.Owin.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy">
+      <HintPath>..\..\packages\Nancy.1.1\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Bootstrappers.Autofac">
+      <HintPath>..\..\packages\Nancy.Bootstrappers.Autofac.1.1\lib\net40\Nancy.Bootstrappers.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Owin">
+      <HintPath>..\..\packages\Nancy.Owin.1.1\lib\net40\Nancy.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Serialization.JsonNet">
+      <HintPath>..\..\packages\Nancy.Serialization.JsonNet.1.1\lib\net40\Nancy.Serialization.JsonNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog">
+      <HintPath>..\..\packages\Serilog.1.4.204\lib\net45\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Extras.Topshelf">
+      <HintPath>..\..\packages\Serilog.Extras.Topshelf.1.4.204\lib\net45\Serilog.Extras.Topshelf.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Extras.Web">
+      <HintPath>..\..\packages\Serilog.Extras.Web.1.4.204\lib\net45\Serilog.Extras.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.FullNetFx">
+      <HintPath>..\..\packages\Serilog.1.4.204\lib\net45\Serilog.FullNetFx.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Seq">
+      <HintPath>..\..\packages\Serilog.Sinks.Seq.1.4.196\lib\net45\Serilog.Sinks.Seq.dll</HintPath>
+    </Reference>
+    <Reference Include="SerilogMetrics, Version=1.0.23.0, Culture=neutral, PublicKeyToken=d4b150f150627b06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\SerilogMetrics.1.0.23\lib\net45\SerilogMetrics.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThirdDrawer, Version=1.0.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\ThirdDrawer.1.0.1.4\lib\net40\ThirdDrawer.dll</HintPath>
+    </Reference>
+    <Reference Include="Topshelf">
+      <HintPath>..\..\packages\Topshelf.3.1.4\lib\net40-full\Topshelf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Api\Monitor\BuildStatusLookup.cs" />
+    <Compile Include="Api\Monitor\BuildStatusModel.cs" />
+    <Compile Include="Api\Monitor\IMonitorBroadcaster.cs" />
+    <Compile Include="Api\Monitor\IBuildStatusLookup.cs" />
+    <Compile Include="App_Start\BuildMonitorService.cs" />
+    <Compile Include="App_Start\Extensions.cs" />
+    <Compile Include="App_Start\SampleBootstrapper.cs" />
+    <Compile Include="AutofacModules\ConfigurationSettingsModule.cs" />
+    <Compile Include="AutofacModules\InfrastructureModule.cs" />
+    <Compile Include="AutofacModules\JsonSerializerModule.cs" />
+    <Compile Include="AutofacModules\LoggerModule.cs" />
+    <Compile Include="AutofacModules\LookupServicesModule.cs" />
+    <Compile Include="AutofacModules\SignalRModule.cs" />
+    <Compile Include="ConfigurationSettings\BaseUri.cs" />
+    <Compile Include="ConfigurationSettings\EnvironmentNameSetting.cs" />
+    <Compile Include="ConfigurationSettings\EnvironmentTypeSetting.cs" />
+    <Compile Include="ConfigurationSettings\MinimumLogLevel.cs" />
+    <Compile Include="ConfigurationSettings\SeqServerUri.cs" />
+    <Compile Include="Api\Monitor\MonitorBroadcaster.cs" />
+    <Compile Include="Api\Monitor\MonitorHub.cs" />
+    <Compile Include="ConfigurationSettings\ServiceDescription.cs" />
+    <Compile Include="ConfigurationSettings\ServiceName.cs" />
+    <Compile Include="Infrastructure\Authentication\AuthenticatedUser.cs" />
+    <Compile Include="Infrastructure\CustomJsonSerializer.cs" />
+    <Compile Include="Infrastructure\Clock\IClock.cs" />
+    <Compile Include="Infrastructure\Clock\SystemClock.cs" />
+    <Compile Include="Infrastructure\ErrorHandling\SerilogErrorHandlingExtensions.cs" />
+    <Compile Include="Infrastructure\ErrorHandling\SerilogErrorHandlingMiddleware.cs" />
+    <Compile Include="Infrastructure\ILookupService.cs" />
+    <Compile Include="Infrastructure\RequestLogContext.cs" />
+    <Compile Include="Infrastructure\Environments\AppEnvironment.cs" />
+    <Compile Include="Infrastructure\Environments\AppEnvironmentEnricher.cs" />
+    <Compile Include="Infrastructure\Environments\EnvironmentName.cs" />
+    <Compile Include="Infrastructure\Environments\EnvironmentType.cs" />
+    <Compile Include="Infrastructure\SignalR\AutofacDependencyResolver.cs" />
+    <Compile Include="Infrastructure\SignalR\Broadcaster.cs" />
+    <Compile Include="Infrastructure\SignalR\ErrorHandlingPipelineModule.cs" />
+    <Compile Include="Infrastructure\SignalR\HubContext.cs" />
+    <Compile Include="Infrastructure\SignalR\IHubContext.cs" />
+    <Compile Include="Infrastructure\SignalR\LoggingPipelineModule.cs" />
+    <Compile Include="Infrastructure\SignalR\RegistrationExtensions.cs" />
+    <Compile Include="Infrastructure\SignalR\SignalRContractResolver.cs" />
+    <Compile Include="Infrastructure\SignalR\SignalRExtensions.cs" />
+    <Compile Include="Infrastructure\Teamcity\Build.cs" />
+    <Compile Include="Infrastructure\Teamcity\Teamcity.cs" />
+    <Compile Include="Infrastructure\Teamcity\TeamcityProperty.cs" />
+    <Compile Include="Infrastructure\ThreadSafeLazyAsync.cs" />
+    <Compile Include="IoC.cs" />
+    <Compile Include="Api\Monitor\MonitorModule.cs" />
+    <Compile Include="NancyModules\HomeModule.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\blocks\exception\exception-handler.provider.js" />
+    <Content Include="App\blocks\exception\exception.js" />
+    <Content Include="App\blocks\exception\exception.module.js" />
+    <Content Include="App\blocks\logger\logger.js" />
+    <Content Include="App\blocks\logger\logger.module.js" />
+    <Content Include="App\blocks\router\routehelper.js" />
+    <Content Include="App\blocks\router\router.module.js" />
+    <Content Include="App\monitor\monitor.html" />
+    <Content Include="App\monitor\monitor.js" />
+    <Content Include="App\monitor\monitor.module.js" />
+    <Content Include="App\monitor\config.route.js" />
+    <Content Include="App\core\config.js" />
+    <Content Include="App\core\constants.js" />
+    <Content Include="App\core\core.module.js" />
+    <Content Include="App\core\dataservice.js" />
+    <Content Include="App\dashboard\config.route.js" />
+    <Content Include="App\dashboard\dashboard.html" />
+    <Content Include="App\dashboard\dashboard.js" />
+    <Content Include="App\dashboard\dashboard.module.js" />
+    <Content Include="App\layout\layout.module.js" />
+    <Content Include="App\layout\shell.html" />
+    <Content Include="App\layout\shell.js" />
+    <Content Include="App\monitor\monitorHub.js" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\lodash.js" />
+    <Content Include="Scripts\lodash.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <None Include="app.config" />
+    <None Include="Content\bootstrap-theme.css.map" />
+    <None Include="Content\bootstrap.css.map" />
+    <Content Include="Fonts\fontawesome-webfont.eot" />
+    <Content Include="Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Fonts\fontawesome-webfont.woff" />
+    <Content Include="Fonts\FontAwesome.otf" />
+    <Content Include="Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Content\toastr.less" />
+    <None Include="Content\toastr.scss" />
+    <None Include="packages.config" />
+    <None Include="Scripts\angular-animate.min.js.map" />
+    <None Include="Scripts\angular-moment.min.js.map" />
+    <None Include="Scripts\angular-route.min.js.map" />
+    <None Include="Scripts\angular-sanitize.min.js.map" />
+    <None Include="Scripts\angular.min.js.map" />
+    <None Include="Scripts\jquery-2.1.3.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\app.module.js" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Fonts\fontawesome-webfont.svg" />
+    <Content Include="index.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-moment.js" />
+    <Content Include="Scripts\angular-moment.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\moment-timezone-utils.js" />
+    <Content Include="Scripts\moment-timezone-with-data-2010-2020.js" />
+    <Content Include="Scripts\moment-timezone-with-data-2010-2020.min.js" />
+    <Content Include="Scripts\moment-timezone-with-data.js" />
+    <Content Include="Scripts\moment-timezone-with-data.min.js" />
+    <Content Include="Scripts\moment-timezone.js" />
+    <Content Include="Scripts\moment-timezone.min.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\signalr-hub.js" />
+    <Content Include="Scripts\signalr-hub.min.js" />
+    <Content Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\npm.js" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\OctoPack.3.0.42\tools\OctoPack.targets" Condition="Exists('..\..\packages\OctoPack.3.0.42\tools\OctoPack.targets')" />
+  <Target Name="EnsureOctoPackImported" BeforeTargets="BeforeBuild" Condition="'$(OctoPackImported)' == ''">
+    <Error Condition="!Exists('..\..\packages\OctoPack.3.0.42\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="You are trying to build with OctoPack, but the NuGet targets file that OctoPack depends on is not available on this computer. This is probably because the OctoPack package has not been committed to source control, or NuGet Package Restore is not enabled. Please enable NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\packages\OctoPack.3.0.42\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="OctoPack cannot be run because NuGet packages were restored prior to the build running, and the targets file was unavailable when the build started. Please build the project again to include these packages in the build. You may also need to make sure that your build server does not delete packages prior to each build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,13 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="list-group">
+                <a data-ng-repeat="item in vm.items" data-ng-class="{'list-group-item': true, 'list-group-item-success': item.result, 'list-group-item-danger': !item.result}" data-ng-href="{{item.link}}">
+                    <span class="topcorner" am-time-ago="item.time"></span>
+                    <h4 class="list-group-item-heading">{{item.heading}}</h4>
+                    <p class="list-group-item-text">{{item.text}}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

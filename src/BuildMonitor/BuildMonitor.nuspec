@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BuildMonitor</id>
+    <version>$version$</version>
+    <title>BuildMonitor</title>
+    <authors>Gert Jansen van Rensburg</authors>
+    <owners>Gert Jansen van Rensburg</owners>
+    <projectUrl>http://github.com/gertjvr/buildmonitor</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>BuildMonitor for TeamCity</description>
+    <copyright>Copyright 2015</copyright>
+    <tags>TeamCity Build Monitor</tags>
+  </metadata>
+</package>
