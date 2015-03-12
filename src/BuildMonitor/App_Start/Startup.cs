@@ -41,7 +41,7 @@ namespace BuildMonitor
 
             app.UseNancy(options =>
             {
-                var bootstrapper = new SampleBootstrapper()
+                var bootstrapper = new CustomBootstrapper()
                     .UseContainer(_container)
                     .ResolveClaimsPrincipal(ResolveClaimsPrincipal);
 

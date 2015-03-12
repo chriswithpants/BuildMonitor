@@ -135,7 +135,7 @@
     <Compile Include="Api\Monitor\IBuildStatusLookup.cs" />
     <Compile Include="App_Start\BuildMonitorService.cs" />
     <Compile Include="App_Start\Extensions.cs" />
-    <Compile Include="App_Start\SampleBootstrapper.cs" />
+    <Compile Include="App_Start\CustomBootstrapper.cs" />
     <Compile Include="AutofacModules\ConfigurationSettingsModule.cs" />
     <Compile Include="AutofacModules\InfrastructureModule.cs" />
     <Compile Include="AutofacModules\JsonSerializerModule.cs" />
@@ -218,6 +218,7 @@
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
     <None Include="app.config" />
+    <None Include="BuildMonitor.nuspec" />
     <None Include="Content\bootstrap-theme.css.map" />
     <None Include="Content\bootstrap.css.map" />
     <Content Include="Fonts\fontawesome-webfont.eot" />
